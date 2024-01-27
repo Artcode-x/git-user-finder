@@ -1,19 +1,29 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+
 import * as S from './Main.styled'
-import { searchStateUpdate } from '../store/reducersSlice'
-import { searchSelector } from '../store/toolkitSelectors'
+import Search from '../components/Search/Search'
+import UserList from '../components/UserList/UserList'
+import Filter from '../components/Filter-repo/filter'
 
 function Main() {
-    const test = useSelector(searchSelector)
-    const dispatch = useDispatch()
+    // const [loading, setLoading] = useState(null)
 
-    dispatch(searchStateUpdate(true))
-    console.log(test)
+    // const UsersList = ({ users }) => {
+    //     return (
+    //       <ul>
+    //         {users.map((user) => (
+    //           <li key={user.id}>{user.login}</li>
+    //         ))}
+    //       </ul>
+    //     );
+    //   };
+
     return (
-        <S.Parent>
-            <S.Test>123</S.Test>
-        </S.Parent>
+        <S.GeneralBlock>
+            <Search />
+            <Filter />
+            <UserList />
+        </S.GeneralBlock>
     )
 }
 export default Main
