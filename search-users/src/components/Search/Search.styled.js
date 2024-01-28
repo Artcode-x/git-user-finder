@@ -60,3 +60,5 @@ export const ForErrors = styled.div`
     line-height: 25px;
     text-align: center;
 `
+
+

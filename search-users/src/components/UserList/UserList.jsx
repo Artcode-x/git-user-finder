@@ -7,7 +7,7 @@ import { searchUsersSelector } from '../../store/toolkitSelectors'
 export default function UserList() {
     //  const navigate = useNavigate()
     const userList = useSelector(searchUsersSelector)
-    console.log(userList)
+    // console.log(userList)
     const clickToUser = (userLogin) => {
         console.log(userLogin)
         //    navigate(`userList/${userLogin}`)

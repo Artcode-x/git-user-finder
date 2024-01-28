@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import searchQuerryGetUsers from '../../api/api'
-import { saveSearchUser } from '../../store/reducersSlice'
+import {
+    saveSearchUser,
+    updTextInInputSearch,
+    updateTotalPagesCount,
+} from '../../store/reducersSlice'
 
 import * as S from './Search.styled'
 import { filterSelector } from '../../store/toolkitSelectors'
@@ -15,21 +19,34 @@ export default function Search() {
     const [match, setMatch] = useState(null)
     const [showError, setShowError] = useState(null)
 
+    const page = 1
+
     const searchClick = async () => {
         try {
             setDisabled(true)
 
-            const response = await searchQuerryGetUsers({ userName, filter })
-            //  console.log(response)
+            const response = await searchQuerryGetUsers({
+                userName,
+                filter,
+                page,
+            })
             setMatch(response.total_count)
+
+            const PageforShow = 8
+            //  кол-во выводимых страниц на главной по 8 юзеров
+            const resultAllPages = Math.ceil(response.total_count / PageforShow)
+
+            dispatch(updateTotalPagesCount(resultAllPages))
+
             const users = response.items.map((user) => ({
                 login: user.login,
                 avatar: user.avatar_url,
                 url: user.url,
                 id: user.id,
             }))
-            // console.log(users)
+
             dispatch(saveSearchUser(users))
+            dispatch(updTextInInputSearch(userName))
         } catch (error) {
             console.log(error.response)
             if (error.response.status === 403) {
@@ -57,8 +74,6 @@ export default function Search() {
         searchClick()
     }, [filter])
 
-    // useEffect(() => {}, [showError])
-
     return (
         <S.SearchContainer>
             <S.TitleH3>Github Search Users</S.TitleH3>
@@ -67,7 +82,6 @@ export default function Search() {
                     type="search"
                     placeholder="Поиск"
                     onKeyDown={(e) => checkEnter(e)}
-                    // onKeyDown={() => searchClick()}
                     onChange={(e) => {
                         setUserName(e.target.value)
                     }}
