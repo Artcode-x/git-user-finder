@@ -53,3 +53,10 @@ export const AllResults = styled.h3`
     text-decoration: underline;
     color: blue;
 `
+export const ForErrors = styled.div`
+    color: coral;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 25px;
+    text-align: center;
+`

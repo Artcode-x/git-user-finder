@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     search: {},
     searchUserName: {},
+    filter: true,
 }
 
 const reducersSlice = createSlice({
@@ -16,8 +17,11 @@ const reducersSlice = createSlice({
         saveSearchUser: (state, action) => {
             state.searchUserName = action.payload
         },
+        filterUpdate: (state, action) => {
+            state.filter = action.payload
+        }
     },
 })
 
-export const { searchStateUpdate, saveSearchUser } = reducersSlice.actions
+export const { searchStateUpdate, saveSearchUser, filterUpdate } = reducersSlice.actions
 export default reducersSlice.reducer

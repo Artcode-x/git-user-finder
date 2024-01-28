@@ -16,17 +16,16 @@ export default function UserList() {
         <S.Parent>
             {userList.length > 0 ? (
                 <S.UserListBlock>
-                    {userList?.map((user) => (
-                        <S.UserInfo
-                            key={user.id}
-                            onClick={() => clickToUser(user.login)}
-                        >
+                    {userList.map((user) => (
+                        <S.UserInfo key={user.id}>
                             <S.UserDivForImg>
                                 <S.UserAva src={user.avatar} />
                             </S.UserDivForImg>
                             <S.UserLogin>{user.login}</S.UserLogin>
                             <S.TextUrl>{user.url}</S.TextUrl>
-                            <S.GoToUser>подробнее</S.GoToUser>
+                            <S.GoToUser onClick={() => clickToUser(user.login)}>
+                                подробнее
+                            </S.GoToUser>
                         </S.UserInfo>
                     ))}
                 </S.UserListBlock>
