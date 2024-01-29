@@ -17,3 +17,13 @@ export default async function searchQuerryGetUsers({ userName, filter, page }) {
 
     return response.data
 }
+
+export async function getUserInfo(userName) {
+    const response = await axios(`${way}/users/${userName}`, {
+        method: 'GET',
+        headers: {
+            'X-GitHub-Api-Version': '2022-11-28',
+        },
+    })
+    return response.data
+}

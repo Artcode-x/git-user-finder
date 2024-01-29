@@ -2,12 +2,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
+    user: {},
     search: {},
     searchUserName: {},
     filter: true,
     pageNumber: 1,
     totalPagesFound: {},
     textInInputSearch: {},
+    flag: false,
 }
 
 const reducersSlice = createSlice({
@@ -32,6 +34,12 @@ const reducersSlice = createSlice({
         updTextInInputSearch: (state, action) => {
             state.textInInputSearch = action.payload
         },
+        setFlag: (state, action) => {
+            state.flag = action.payload
+        },
+        setUser: (state, action) => {
+            state.user = action.payload
+        },
     },
 })
 
@@ -42,5 +50,7 @@ export const {
     setPageNumber,
     updateTotalPagesCount,
     updTextInInputSearch,
+    setFlag,
+    setUser,
 } = reducersSlice.actions
 export default reducersSlice.reducer

@@ -10,3 +10,5 @@ export const totalPagesFoundSelector = (store) =>
     mainSelector(store).totalPagesFound
 export const InputSearchSelector = (store) =>
     mainSelector(store).textInInputSearch
+export const flagSelector = (store) => mainSelector(store).flag
+export const userSelector = (store) => mainSelector(store).user

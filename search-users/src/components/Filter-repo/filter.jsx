@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import * as S from './filter.styled'
-
 import { filterUpdate } from '../../store/reducersSlice'
 
 export default function Filter() {

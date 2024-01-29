@@ -37,12 +37,13 @@ export default function Search() {
             const resultAllPages = Math.ceil(response.total_count / PageforShow)
 
             dispatch(updateTotalPagesCount(resultAllPages))
-
+            console.log(response)
             const users = response.items.map((user) => ({
                 login: user.login,
                 avatar: user.avatar_url,
                 url: user.url,
                 id: user.id,
+                link: user.html_url,
             }))
 
             dispatch(saveSearchUser(users))

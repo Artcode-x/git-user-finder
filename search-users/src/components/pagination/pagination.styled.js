@@ -64,7 +64,7 @@ export const CurrentNumberPageDiv = styled.div`
 `
 
 export const ForErrors = styled.div`
-    color: coral;
+    color: red;
     font-weight: 400;
     font-size: 28px;
     line-height: 25px;

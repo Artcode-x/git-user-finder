@@ -59,9 +59,7 @@ export default function Pagination() {
     }
 
     const next = () => {
-        console.log(AllPagesCount)
         if (currentPage < AllPagesCount) {
-            console.log('test')
             const newCurrentPage = currentPage + 1
             dispatch(setPageNumber(newCurrentPage))
             sendRequestToApi(newCurrentPage)
@@ -74,11 +72,7 @@ export default function Pagination() {
                     Назад
                 </S.BtnPrev>
 
-                <S.CurrentNumberPageDiv
-                //  onClick={}
-                >
-                    {currentPage}
-                </S.CurrentNumberPageDiv>
+                <S.CurrentNumberPageDiv>{currentPage}</S.CurrentNumberPageDiv>
                 <S.BtnNext disabled={disabled} type="button" onClick={next}>
                     Вперед
                 </S.BtnNext>
