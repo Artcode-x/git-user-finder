@@ -19,7 +19,6 @@ function Main() {
             <Filter />
             {flagForOpenModal && <Modal />}
             {loading ? <CircleLoader /> : <UserList />}
-            {/* <UserList /> */}
             <Pagination />
         </S.GeneralBlock>
     )

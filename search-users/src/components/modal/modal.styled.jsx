@@ -1,16 +1,6 @@
 import styled from 'styled-components'
 
 export const Modal = styled.div`
-    /* width: 680px;
-    height: 450px;
-    background-color: ghostwhite;
-    border-radius: 10%;
-    border: 1px solid;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    position: absolute;
-    margin-top: 28%; */
     width: 700px;
     height: 600px;
     background-color: ghostwhite;
@@ -19,8 +9,6 @@ export const Modal = styled.div`
     margin-top: 20px;
     margin-bottom: 23px;
     position: absolute;
-    // margin-top: 25%;
-    // margin-top: 15%;
     margin-top: 20%;
 `
 
@@ -90,7 +78,6 @@ export const GoToUser = styled.button`
     }
 `
 export const UserLogin = styled.p`
-    // height: 52px;
     height: 30px;
     font-size: 22px;
     font-weight: 500;

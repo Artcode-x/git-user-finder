@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Sort = styled.div`
-    //  display: ${(props) => props.display};
     flex-direction: column;
     align-items: center;
 `

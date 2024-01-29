@@ -10,15 +10,12 @@ import {
 import * as S from './Search.styled'
 import { filterSelector } from '../../store/toolkitSelectors'
 
-// export interface IProps {
-//     setLoading: React.Dispatch<React.SetStateAction<boolean>>,
-// }
-
 // eslint-disable-next-line react/prop-types
 export default function Search({ setLoading }) {
     const filter = useSelector(filterSelector)
 
     const dispatch = useDispatch()
+
     const [userName, setUserName] = useState('')
     const [disabled, setDisabled] = useState(false)
     const [match, setMatch] = useState(null)
@@ -39,23 +36,20 @@ export default function Search({ setLoading }) {
             setMatch(response.total_count)
 
             const PageforShow = 8
-            //  кол-во выводимых страниц на главной по 8 юзеров
             const resultAllPages = Math.ceil(response.total_count / PageforShow)
 
             dispatch(updateTotalPagesCount(resultAllPages))
-          
+
             const users = response.items.map((user) => ({
                 login: user.login,
                 avatar: user.avatar_url,
                 url: user.url,
                 id: user.id,
-                link: user.html_url,
             }))
 
             dispatch(saveSearchUser(users))
             dispatch(updTextInInputSearch(userName))
         } catch (error) {
-            console.log(error.response)
             if (error.response.status === 403) {
                 setShowError(
                     'Превышено количество запросов, повторите позднее!'

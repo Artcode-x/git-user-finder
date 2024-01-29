@@ -12,6 +12,7 @@ import { saveSearchUser, setPageNumber } from '../../store/reducersSlice'
 
 export default function Pagination() {
     const dispatch = useDispatch()
+
     const userName = useSelector(InputSearchSelector)
     const filter = useSelector(filterSelector)
     const currentPage = useSelector(pageNumberSelector)
