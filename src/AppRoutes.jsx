@@ -5,7 +5,7 @@ import Main from './pages/Main'
 function AppRoutes() {
     return (
         <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/verification-task" element={<Main />} />
         </Routes>
     )
 }
