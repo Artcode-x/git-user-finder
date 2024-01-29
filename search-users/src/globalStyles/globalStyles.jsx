@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyles = createGlobalStyle`
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +13,10 @@
 
 body {
   background-color: gainsboro;
+}
+
+button {
+    cursor: pointer;
 }
 
 .App {
@@ -51,3 +58,6 @@ body {
     transform: rotate(360deg);
   }
 }
+
+`
+export default GlobalStyles
