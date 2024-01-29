@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import * as S from './Main.styled'
 import Search from '../components/Search/Search'
@@ -7,15 +7,19 @@ import Filter from '../components/Filter-repo/filter'
 import Pagination from '../components/pagination/pagination'
 import { flagSelector } from '../store/toolkitSelectors'
 import Modal from '../components/modal/modal'
+import CircleLoader from '../components/Loader/loader'
 
 function Main() {
+    const [loading, setLoading] = useState(false)
+
     const flagForOpenModal = useSelector(flagSelector)
     return (
         <S.GeneralBlock>
-            <Search />
+            <Search setLoading={setLoading} />
             <Filter />
             {flagForOpenModal && <Modal />}
-            <UserList />
+            {loading ? <CircleLoader /> : <UserList />}
+            {/* <UserList /> */}
             <Pagination />
         </S.GeneralBlock>
     )

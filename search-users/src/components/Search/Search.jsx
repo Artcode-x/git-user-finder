@@ -10,7 +10,12 @@ import {
 import * as S from './Search.styled'
 import { filterSelector } from '../../store/toolkitSelectors'
 
-export default function Search() {
+// export interface IProps {
+//     setLoading: React.Dispatch<React.SetStateAction<boolean>>,
+// }
+
+// eslint-disable-next-line react/prop-types
+export default function Search({ setLoading }) {
     const filter = useSelector(filterSelector)
 
     const dispatch = useDispatch()
@@ -23,6 +28,7 @@ export default function Search() {
 
     const searchClick = async () => {
         try {
+            setLoading(true)
             setDisabled(true)
 
             const response = await searchQuerryGetUsers({
@@ -37,7 +43,7 @@ export default function Search() {
             const resultAllPages = Math.ceil(response.total_count / PageforShow)
 
             dispatch(updateTotalPagesCount(resultAllPages))
-            console.log(response)
+          
             const users = response.items.map((user) => ({
                 login: user.login,
                 avatar: user.avatar_url,
@@ -61,6 +67,7 @@ export default function Search() {
             }
         } finally {
             setDisabled(false)
+            setLoading(false)
         }
     }
 

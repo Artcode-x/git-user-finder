@@ -11,17 +11,16 @@ export default function UserList() {
 
     const userList = useSelector(searchUsersSelector)
 
-    const clickToUser = async (user) => {
+    const clickToUser = async (user, index) => {
+        console.log(index)
         try {
             setDisabled(true)
-            dispatch(setFlag(true))
-
             const response = await getUserInfo(user.login)
-            console.log(response)
             dispatch(setUser(response))
         } catch (error) {
             console.log(error)
         } finally {
+            dispatch(setFlag(true))
             setDisabled(false)
         }
     }
@@ -29,7 +28,7 @@ export default function UserList() {
         <S.Parent>
             {userList.length > 0 ? (
                 <S.UserListBlock>
-                    {userList.map((user) => (
+                    {userList.map((user, index) => (
                         <S.UserInfo key={user.id}>
                             <S.UserDivForImg>
                                 <S.UserAva src={user.avatar} />
@@ -38,7 +37,7 @@ export default function UserList() {
                             <S.TextUrl>{user.url}</S.TextUrl>
                             <S.GoToUser
                                 disabled={disabled}
-                                onClick={() => clickToUser(user)}
+                                onClick={() => clickToUser(user, index)}
                             >
                                 {disabled ? 'Загружаю...' : 'Подробнее'}
                             </S.GoToUser>
