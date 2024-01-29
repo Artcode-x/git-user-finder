@@ -44,7 +44,8 @@ https://artcode-x.github.io/verification-task/
 
 ## Примечания по локальному запуску проекта для разработки
 
-### Важно! Перед запуском локально, в src/AppRoutes.jsx не должно быть "verification-task":  <Route path="/" element={<Main />} />
+### Важно! Перед запуском локально, в src/AppRoutes.jsx не должно быть "verification-task":  
+Так должен выглядеть роут: <Route path="/" element={<Main />} /> 
 path='/verification-task' был использован для деплоя проекта.
 
 Для клонирования репозитория выполните команду:
