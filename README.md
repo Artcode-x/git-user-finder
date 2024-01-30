@@ -47,7 +47,7 @@ https://artcode-x.github.io/verification-task/
 ### Важно! Перед запуском локально: 
 в файле package.json стоит убрать строку:  "homepage": "https://artcode-x.github.io/verification-task", 
 в файле AppRoutes: изменить path='/verification-task' на path='/' 
-Было еализовано для запуска деплоя проекта на gh-pages.
+Было реализовано для запуска деплоя проекта на gh-pages.
 
 Так должен выглядеть роут: 
 ```
