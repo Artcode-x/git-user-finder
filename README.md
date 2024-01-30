@@ -44,12 +44,6 @@ https://artcode-x.github.io/verification-task/
 
 ## Примечания по локальному запуску проекта для разработки
 
-### Важно! Перед запуском локально: 
-- в файле package.json стоит убрать строку:  "homepage": "https://artcode-x.github.io/verification-task", 
-- в файле AppRoutes: изменить path='/verification-task' на path='/' 
-Было реализовано для запуска деплоя проекта на gh-pages.
-
-
 Для клонирования репозитория выполните команду:
 
 ```
