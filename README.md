@@ -34,11 +34,11 @@ https://artcode-x.github.io/verification-task/
 
 ## Назначение папок и файлов проекта
 
-**/components** - Компоненты используемые в проекте
-**/pages** - Страницы приложения  
-**/store** - Управление состояниями приложения
-**/api** - Запросы к API (бэкэнду)  
-**/app** - Главный компонент приложения
+- **/components** - Компоненты используемые в проекте
+- **/pages** - Страницы приложения  
+- **/store** - Управление состояниями приложения
+- **/api** - Запросы к API (бэкэнду)  
+- **/app** - Главный компонент приложения
 
 ---
 
@@ -78,5 +78,5 @@ npm test
 
 ## Backend / документация
 
-Документация: https://developer.github.com/v3/search/#search-users
-Данные по пользователям берем с https://api.github.com/search/users?q={userName}
+- Документация: https://developer.github.com/v3/search/#search-users
+- Данные по пользователям берем с https://api.github.com/search/users?q={userName}
