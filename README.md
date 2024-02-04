@@ -1,4 +1,4 @@
-# Github users search
+# Git-user-finder
 
 ---
 
@@ -47,7 +47,7 @@ https://artcode-x.github.io/verification-task/
 Для клонирования репозитория выполните команду:
 
 ```
-git clone https://github.com/Artcode-x/verification-task
+git clone https://github.com/Artcode-x/git-user-finder
 ```
 
 Перейти в папку проекта и установить зависимости перед запуском:
