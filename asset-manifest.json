@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Artcode-x/git-user-finder/static/js/main.96b2ce2d.js",
-    "index.html": "/Artcode-x/git-user-finder/index.html",
-    "main.96b2ce2d.js.map": "/Artcode-x/git-user-finder/static/js/main.96b2ce2d.js.map"
+    "main.js": "/git-user-finder/static/js/main.51cbb423.js",
+    "index.html": "/git-user-finder/index.html",
+    "main.51cbb423.js.map": "/git-user-finder/static/js/main.51cbb423.js.map"
   },
   "entrypoints": [
-    "static/js/main.96b2ce2d.js"
+    "static/js/main.51cbb423.js"
   ]
 }
