@@ -21,7 +21,7 @@
 
 ## Ссылка на deploy проекта
 
-https://artcode-x.github.io/verification-task/
+https://artcode-x.github.io/git-user-finder/
 
 ## Стек технологий используемый при разработке проекта
 
