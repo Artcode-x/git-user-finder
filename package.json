@@ -1,5 +1,6 @@
 {
     "name": "search-users",
+    "homepage": "https://github.com/Artcode-x/git-user-finder",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
